@@ -2,7 +2,8 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  button(onclick="makealel()", title="makealel") lel
+  p ASDFWelcome to #{title}
   p This is a line with #[em some emphasis] and #[strong strong text] markup.
   p This line has un-escaped data: !{'<em> is emphasised</em>'} and escaped data: #{'<em> is not emphasised</em>'}.
     | This line follows on.

@@ -1,10 +1,7 @@
 extends layout
 
 block content
-  h1 This is a lel
-  p Welcome to voiceform
-  form(method='POST' action='')
-      div.form-group
-        label(for='first_name') First Name:
-        input#text_to_speech.form-control(type='text', placeholder='Text')
-      button.btn.btn-primary(type='submit') Submit
+  h1 Text to voice test
+  p Just type a text and click 'Speak!'
+  input#what_to_say.form-control(type='text', placeholder='What should i say')
+  button(onclick="whatToSay()", title="makealel") Speak!

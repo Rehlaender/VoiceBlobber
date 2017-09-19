@@ -30,8 +30,7 @@ app.use(sassMiddleware({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', voiceform);
 app.use('/voiceform', voiceform);
 
 // catch 404 and forward to error handler

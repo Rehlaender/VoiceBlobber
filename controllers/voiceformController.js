@@ -1,9 +1,5 @@
-exports.voice_form_post = function(req, res) {
-    res.send('This is a post');
-};
-
 exports.index = function(req, res) {
-    res.send('This is a get');
+    res.render('voiceform', { title: 'Voiceform' });
 };
 
 exports.post_voice = function(req, res) {
