@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 This is a form
+  p Welcome to voiceform
+  form(method='POST' action='')
+      div.form-group
+        label(for='first_name') First Name:
+        input#text_to_speech.form-control(type='text', placeholder='Text')
+      button.btn.btn-primary(type='submit') Submit
