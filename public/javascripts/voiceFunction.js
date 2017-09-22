@@ -7,6 +7,12 @@ function whatToSay() {
 
 window.onload = function(e){
 
+  //create a synth and connect it to the master output (your speakers)
+  var synth = new Tone.Synth().toMaster();
+
+  //play a middle 'C' for the duration of an 8th note
+  synth.triggerAttackRelease("C4", "8n");
+
   document.getElementById("what_to_say").addEventListener("keydown", function(e) {
       // Enter is pressed
       if (e.keyCode == 13) { whatToSay(); }
