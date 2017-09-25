@@ -11,23 +11,35 @@ window.onload = function(e){
 
   var imageElem = document.getElementsByTagName('img')[0],
 
+
+  resetOrientation = function(e){
+    console.log('eeeeeee weee');
+    var alpha = 0,
+        beta = 0,
+        gamma = 0;
+
+        // Rotate the <img> element in 3 axes according to the device’s orientation
+
+      imageElem.style.webkitTransform = 'rotateZ(' + alpha + 'deg) rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg)';
+
+  }
   // Create an event handler function for processing the device orientation event
-      handleOrientationEvent = function(e) {
+    handleOrientationEvent = function(e) {
 
-          // Get the orientation of the device in 3 axes, known as alpha, beta, and gamma,
-          // represented in degrees from the initial orientation of the device on load
+        // Get the orientation of the device in 3 axes, known as alpha, beta, and gamma,
+        // represented in degrees from the initial orientation of the device on load
 
-          var alpha = e.alpha,
-              beta = e.beta,
-              gamma = e.gamma;
+        var alpha = e.alpha,
+            beta = e.beta,
+            gamma = e.gamma;
 
-          // Rotate the <img> element in 3 axes according to the device’s orientation
+        // Rotate the <img> element in 3 axes according to the device’s orientation
 
-          imageElem.style.webkitTransform = 'rotateZ(' + alpha + 'deg) rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg)';
-      };
+        imageElem.style.webkitTransform = 'rotateZ(' + alpha + 'deg) rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg)';
+    };
   // Listen for changes to the device orientation using the gyroscope and fire the event
   // handler accordingly
-
+  document.getElementById('reset-gravity').addEventListener('mousedown', resetOrientation, false);
   window.addEventListener('deviceorientation', handleOrientationEvent, false);
 
   // Reference page elements for dropping current device acceleration values into
